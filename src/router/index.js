@@ -15,7 +15,7 @@ import Exercise11 from "../components/exercises/exercise11";
 import Projects from "../views/Projects.vue";
 import TheMonsterSlayer from "../components/projects/monsterslayer";
 import Quotes from "../components/projects/quotes";
-// import Quotes from "../components/projects/quotes";
+import Superquiz from "../components/projects/superquiz";
 import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
 
@@ -51,6 +51,10 @@ const routes = [
       {
         path: "/projects/quotes",
         component: Quotes
+      },
+      {
+        path: "/projects/superquiz",
+        component: Superquiz
       }
     ]
   },

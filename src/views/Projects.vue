@@ -6,8 +6,7 @@
       |
       <router-link to="/projects/quotes">Quotes</router-link>
       |
-      <router-link to="/projects/monsterslayer">The monster slayer</router-link>
-      |
+      <router-link to="/projects/superquiz">Super Quiz</router-link>
     </div>
     <div class="projects">
       <router-view />
