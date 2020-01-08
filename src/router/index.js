@@ -18,6 +18,7 @@ import Quotes from "../components/projects/quotes";
 import Superquiz from "../components/projects/superquiz";
 import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
+import Http from "../components/extras/http";
 
 Vue.use(VueRouter);
 
@@ -37,6 +38,10 @@ const routes = [
       {
         path: "/extras/animations/",
         component: Animations
+      },
+      {
+        path: "/extras/http/",
+        component: Http
       }
     ]
   },
