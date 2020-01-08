@@ -16,6 +16,8 @@ import Projects from "../views/Projects.vue";
 import TheMonsterSlayer from "../components/projects/monsterslayer";
 import Quotes from "../components/projects/quotes";
 // import Quotes from "../components/projects/quotes";
+import Extras from "../views/Extras.vue";
+import Animations from "../components/extras/animations";
 
 Vue.use(VueRouter);
 
@@ -27,6 +29,16 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "../views/Home.vue")
+  },
+  {
+    path: "/extras",
+    component: Extras,
+    children: [
+      {
+        path: "/extras/animations/",
+        component: Animations
+      }
+    ]
   },
   {
     path: "/projects",
