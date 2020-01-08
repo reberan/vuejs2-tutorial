@@ -1,5 +1,5 @@
 <template>
-  <div class="h">
+  <div class="container">
     <Header :quoteCount="quoteCount" :maxQuotes="maxQuotes" />
     <new-quote @quoteAdded="newQuote" />
     <quote-grid :quotes="quotes" @quoteDeleted="deleteQuote" />
