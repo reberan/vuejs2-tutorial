@@ -6,7 +6,6 @@
       <router-link to="/projects">Projects</router-link> |
       <router-link to="/extras">Extras</router-link>
     </div>
-
     <router-view />
   </div>
 </template>

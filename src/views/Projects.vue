@@ -2,11 +2,11 @@
   <div class="wrapper">
     <h1>Projects</h1>
     <div id="nav">
-      <router-link to="/projects/monsterslayer">The Monster Slayer</router-link>
+      <router-link to="/project/monsterslayer">The Monster Slayer</router-link>
       |
-      <router-link to="/projects/quotes">Quotes</router-link>
+      <router-link to="/project/quotes">Quotes</router-link>
       |
-      <router-link to="/projects/superquiz">Super Quiz</router-link>
+      <router-link to="/project/superquiz">Super Quiz</router-link>
     </div>
     <div class="projects">
       <router-view />
