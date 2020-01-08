@@ -6,8 +6,6 @@
         getPercentageOfCorrectAnswers
       }}%).
     </p>
-    <br />
-    <br />
     <button class="btn btn-primary" @click="restartGame">Restart</button>
   </div>
 </template>
