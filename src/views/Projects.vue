@@ -9,7 +9,7 @@
       <router-link to="/projects/monsterslayer">The monster slayer</router-link>
       |
     </div>
-    <div class="exercises">
+    <div class="projects">
       <router-view />
     </div>
   </div>
