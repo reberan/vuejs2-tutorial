@@ -1,8 +1,19 @@
 <template>
   <div class="container">
-    <Header :quoteCount="quoteCount" :maxQuotes="maxQuotes" />
-    <new-quote @quoteAdded="newQuote" />
-    <quote-grid :quotes="quotes" @quoteDeleted="deleteQuote" />
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">Quotes</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <Header :quoteCount="quoteCount" :maxQuotes="maxQuotes" />
+        <hr />
+        <new-quote @quoteAdded="newQuote" />
+        <hr />
+        <quote-grid :quotes="quotes" @quoteDeleted="deleteQuote" />
+      </div>
+    </div>
     <div class="row">
       <div class="col-sm-12 text-center">
         <div class="alert alert-info">Info: click on a quote to delete it</div>

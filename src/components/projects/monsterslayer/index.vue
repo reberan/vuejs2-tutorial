@@ -1,41 +1,59 @@
 <template>
-  <div class="exercise5">
-    <h1>TheMonsterSlayer</h1>
-    <div class="game">
-      <div id="participants">
-        <div id="player" :style="{ width: `${playerLife}%` }">
-          Player: {{ playerLife }}
-        </div>
-        <div id="monster" :style="{ width: `${monsterLife}%` }">
-          Monster : {{ monsterLife }}
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">The Monster Slayer</h1>
       </div>
-      <div id="commands">
-        <button
-          v-if="status !== 'in_progress'"
-          class="action"
-          @click="handleAction(0)"
-        >
-          Start a new game
-        </button>
-        <div v-else>
-          <button class="action" @click="handleAction(1)">Attack</button>
-          <button class="action" @click="handleAction(2)">Special Skill</button>
-          <button class="action" @click="handleAction(3)">Heal</button>
-          <button class="action" @click="handleAction(4)">Resign</button>
-        </div>
-      </div>
-      <div id="logs">
-        <div v-if="battleLog.length > 0">
-          <div
-            v-for="(action, index) of battleLog"
-            :key="index"
-            :style="{ color: index % 2 === 0 ? 'blue' : 'red' }"
-          >
-            {{ action }}
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <br /><br />
+        <div id="participants">
+          <div id="player" :style="{ width: `${playerLife}%` }">
+            Player: {{ playerLife }}
+          </div>
+          <div id="monster" :style="{ width: `${monsterLife}%` }">
+            Monster : {{ monsterLife }}
           </div>
         </div>
-        <div v-else>No logs for the moment</div>
+        <hr />
+
+        <div id="commands">
+          <button
+            class="btn-primary btn action"
+            v-if="status !== 'in_progress'"
+            @click="handleAction(0)"
+          >
+            Start a new game
+          </button>
+          <div v-else>
+            <button class="action btn btn-primary" @click="handleAction(1)">
+              Attack
+            </button>
+            <button class="action btn btn-info" @click="handleAction(2)">
+              Special Skill
+            </button>
+            <button class="action btn btn-success" @click="handleAction(3)">
+              Heal
+            </button>
+            <button class="action btn btn-warning" @click="handleAction(4)">
+              Resign
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div id="logs">
+          <div v-if="battleLog.length > 0">
+            <div
+              v-for="(action, index) of battleLog"
+              :key="index"
+              :style="{ color: index % 2 === 0 ? 'blue' : 'red' }"
+            >
+              {{ action }}
+            </div>
+          </div>
+          <div v-else>No logs for the moment</div>
+        </div>
       </div>
     </div>
   </div>

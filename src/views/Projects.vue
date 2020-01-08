@@ -2,7 +2,7 @@
   <div class="wrapper">
     <h1>Projects</h1>
     <div id="nav">
-      <router-link to="/projects/monsterslayer">The monster slayer</router-link>
+      <router-link to="/projects/monsterslayer">The Monster Slayer</router-link>
       |
       <router-link to="/projects/quotes">Quotes</router-link>
       |
