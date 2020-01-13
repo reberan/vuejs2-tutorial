@@ -19,6 +19,54 @@ import Superquiz from "../components/projects/superquiz";
 import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
 import Http from "../components/extras/http";
+import Router from "../components/extras/routes";
+import Vuex from "../components/extras/vuex";
+
+import RoutingHeader from "../components/extras/routes/components/Header.vue";
+import RoutingHome from "../components/extras/routes/components/Home.vue";
+
+const User = resolve => {
+  require.ensure(
+    ["../components/extras/routes/components/user/User.vue"],
+    () => {
+      resolve(require("../components/extras/routes/components/user/User.vue"));
+    },
+    "user"
+  );
+};
+const UserStart = resolve => {
+  require.ensure(
+    ["../components/extras/routes/components/user/UserStart.vue"],
+    () => {
+      resolve(
+        require("../components/extras/routes/components/user/UserStart.vue")
+      );
+    },
+    "user"
+  );
+};
+const UserEdit = resolve => {
+  require.ensure(
+    ["../components/extras/routes/components/user/UserEdit.vue"],
+    () => {
+      resolve(
+        require("../components/extras/routes/components/user/UserEdit.vue")
+      );
+    },
+    "user"
+  );
+};
+const UserDetail = resolve => {
+  require.ensure(
+    ["../components/extras/routes/components/user/UserDetail.vue"],
+    () => {
+      resolve(
+        require("../components/extras/routes/components/user/UserDetail.vue")
+      );
+    },
+    "user"
+  );
+};
 
 Vue.use(VueRouter);
 
@@ -36,12 +84,53 @@ const routes = [
     component: Extras,
     children: [
       {
-        path: "/extras/animations/",
+        path: "/extras/animations",
         component: Animations
       },
       {
-        path: "/extras/http/",
+        path: "/extras/http",
         component: Http
+      },
+      {
+        path: "routing",
+        component: Router,
+        children: [
+          {
+            path: "/extras/routing/home",
+            component: RoutingHome,
+            name: "routingHome"
+          },
+          {
+            path: "user",
+            components: {
+              default: User,
+              "header-bottom": RoutingHeader
+            },
+            children: [
+              {
+                path: "",
+                component: UserStart
+              },
+              {
+                path: "/extras/routing/user/:id",
+                component: UserDetail,
+                beforeEnter: (to, from, next) => {
+                  console.log("inside route setup user/:id");
+                  next();
+                }
+              },
+              {
+                path: "/extras/routing/user/:id/edit",
+                component: UserEdit,
+                name: "userEdit"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: "/extras/vuex",
+        component: Vuex
       }
     ]
   },
@@ -50,15 +139,15 @@ const routes = [
     component: Projects,
     children: [
       {
-        path: "/projects/monsterslayer",
+        path: "/project/monsterslayer",
         component: TheMonsterSlayer
       },
       {
-        path: "/projects/quotes",
+        path: "/project/quotes",
         component: Quotes
       },
       {
-        path: "/projects/superquiz",
+        path: "/project/superquiz",
         component: Superquiz
       }
     ]
@@ -102,15 +191,32 @@ const routes = [
       },
       { path: "/exercise/9", component: Exercise9 },
       { path: "/exercise/10", component: Exercise10 },
-      { path: "/exercise/11", component: Exercise11 }
+      { path: "/exercise/11", component: Exercise11 },
+      // In case nothing matches, go back to the root initial page
+      { path: "*", redirect: "/" }
     ]
   }
 ];
 
 const router = new VueRouter({
+  routes,
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return { selector: to.hash };
+    }
+    return { x: 0, y: 0 };
+  }
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("TCL: router.beforeEach");
+  next();
+  // next(false); // to abort navigation
 });
 
 export default router;
