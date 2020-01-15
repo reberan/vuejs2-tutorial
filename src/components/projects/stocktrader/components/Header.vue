@@ -87,10 +87,7 @@ export default {
           const { funds, stockPortfolio, stocks } = data;
           this.initStocks(stocks);
           this.initPortfolio({ funds, stocks: stockPortfolio || [] });
-        }),
-        error => {
-          console.err("loadData -> error ", error);
-        };
+        });
     }
   }
 };
