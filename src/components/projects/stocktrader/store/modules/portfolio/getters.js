@@ -10,7 +10,6 @@ export default {
       return total + stock.quantity * record.price;
     }, 0);
   },
-
   stockPortfolio(state, getters, rootState, rootGetters) {
     return state.stocks.map(stock => {
       const record = rootGetters["stocks/stocks"].find(

@@ -9,7 +9,6 @@ export default {
     }
     state.funds -= quantity * stockPrice;
   },
-
   SELL_STOCK: (state, order) => {
     const { stockId, quantity, stockPrice } = order;
     const record = state.stocks.find(stock => stock.id === stockId);
@@ -25,7 +24,6 @@ export default {
     }
     state.funds += quantity * stockPrice;
   },
-
   INIT_PORTFOLIO: (state, payload) => {
     const { stocks, funds } = payload;
     state.stocks = stocks;

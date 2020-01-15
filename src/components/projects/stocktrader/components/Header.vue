@@ -50,8 +50,10 @@
     </div>
   </nav>
 </template>
+
 <script>
 import { mapGetters, mapActions } from "vuex";
+
 export default {
   data() {
     return {
@@ -80,7 +82,6 @@ export default {
           console.log("data is arrived and saved... notify ? ", data);
         });
     },
-
     loadData() {
       this.$http
         .get("data.json")
@@ -99,4 +100,3 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped></style>

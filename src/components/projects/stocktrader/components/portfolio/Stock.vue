@@ -17,7 +17,9 @@
             class="form-control"
             placeholder="Quantity"
             v-model="quantity"
-            :class="{ danger: insufficientQuantity || quantity < 0 }"
+            :class="{
+              danger: insufficientQuantity || quantity < 0
+            }"
           />
         </div>
         <div class="pull-right">
@@ -33,10 +35,19 @@
     </div>
   </div>
 </template>
+
 <script>
 import { mapActions } from "vuex";
+
 export default {
-  props: ["stock"],
+  props: {
+    stock: {
+      id: String,
+      quantity: Number,
+      price: Number,
+      name: String
+    }
+  },
   data() {
     return {
       quantity: 0
@@ -71,6 +82,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.danger
-  border 1px solid red
+.danger {
+  border: 1px solid red;
+}
 </style>

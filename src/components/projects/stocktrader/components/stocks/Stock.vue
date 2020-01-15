@@ -30,8 +30,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import { mapGetters } from "vuex";
+
 export default {
   props: {
     stock: {
@@ -71,7 +73,9 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
-.danger
-  border 1px solid red
+.danger {
+  border: 1px solid red;
+}
 </style>
