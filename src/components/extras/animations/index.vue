@@ -119,11 +119,8 @@ export default {
     beforeEnter(element) {
       this.elementWidth = 100;
       element.style.width = this.elementWidth + "px";
-
-      console.log("TCL: beforeEnter -> beforeEnter", element);
     },
     enter(element, done) {
-      console.log("TCL: enter -> enter", element);
       let round = 1;
       const interval = setInterval(() => {
         element.style.width = this.elementWidth + round * 10 + "px";
@@ -134,19 +131,13 @@ export default {
         }
       }, 20);
     },
-    afterEnter(element) {
-      console.log("TCL: afterEnter -> afterEnter", element);
-    },
-    enterCancelled(element) {
-      console.log("TCL: enterCancelled -> enterCancelled", element);
-    },
+    afterEnter() {},
+    enterCancelled() {},
     beforeLeave(element) {
-      console.log("TCL: beforeLeave -> beforeLeave", element);
       this.elementWidth = 300;
       element.style.width = this.elementWidth + "px";
     },
     leave(element, done) {
-      console.log("TCL: leave -> leave", element);
       let round = 1;
       const interval = setInterval(() => {
         element.style.width = this.elementWidth - round * 10 + "px";
@@ -157,12 +148,8 @@ export default {
         }
       }, 20);
     },
-    afterLeave(element) {
-      console.log("TCL: afterLeave -> afterLeave", element);
-    },
-    leaveCancelled(element) {
-      console.log("TCL: leaveCancelled -> leaveCancelled", element);
-    }
+    afterLeave() {},
+    leaveCancelled() {}
   }
 };
 </script>

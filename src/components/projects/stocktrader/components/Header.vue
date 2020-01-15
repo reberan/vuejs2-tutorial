@@ -73,14 +73,9 @@ export default {
         stockPortfolio: this.stockPortfolio,
         stocks: this.stocks
       };
-      this.$http
-        .put("data.json", data)
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          console.log("data is arrived and saved... notify ? ", data);
-        });
+      this.$http.put("data.json", data).then(response => {
+        return response.json();
+      });
     },
     loadData() {
       this.$http

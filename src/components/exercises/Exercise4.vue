@@ -130,7 +130,6 @@ export default {
       };
     },
     attachClass(event) {
-      console.log("TCL: attachClass -> attachClass", event);
       this.attachedClass = `testClass${event.target.value}`;
     }
   },
@@ -164,67 +163,82 @@ export default {
 };
 </script>
 <style scoped lang="stylus">
-.task
-  color blue
-.solution
-  color green
+.task {
+  color: blue;
+}
 
-#effect
-  width 100px
-  height 100px
-  border 1px solid black
+.solution {
+  color: green;
+}
 
-.highlight
-  background blue
-  width 200px !important
+#effect {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
 
-.shrink
-  background gray
-  width 50px !important
+.highlight {
+  background: blue;
+  width: 200px !important;
+}
 
-.testClass1
-  font-family 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-  font-weight 100
-  font-size 10px
-  font-style normal
-  width 100px
-  color azure
-  background blue
-  height 30px
-.testClass2
-  font-family 'Times New Roman', Times, serif
-  font-weight 200
-  font-size 12
-  font-style italic
-  width 150px
-  color pink
-  background red
-  height 30px
-.testClass3
-  font-family 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  font-weight 300
-  font-size 14
-  font-style oblique
-  width 200px
-  color tomato
-  background yellow
-  height 30px
-.testClass4
-  font-family Verdana, Tahoma, sans-serif
-  font-weight 400
-  font-size 16
-  font-style initial
-  width 250px
-  color olive
-  background brown
-  height 30px
-.testClass5
-  font-family 'Courier New', Courier, monospace
-  font-weight 500
-  font-size 18
-  font-style inherit
-  width 300px
-  color orange
-  background black
-  height 30px
+.shrink {
+  background: gray;
+  width: 50px !important;
+}
+
+.testClass1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 10px;
+  font-style: normal;
+  width: 100px;
+  color: azure;
+  background: blue;
+  height: 30px;
+}
+
+.testClass2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-size: 12;
+  font-style: italic;
+  width: 150px;
+  color: pink;
+  background: red;
+  height: 30px;
+}
+
+.testClass3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14;
+  font-style: oblique;
+  width: 200px;
+  color: tomato;
+  background: yellow;
+  height: 30px;
+}
+
+.testClass4 {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 16;
+  font-style: initial;
+  width: 250px;
+  color: olive;
+  background: brown;
+  height: 30px;
+}
+
+.testClass5 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size: 18;
+  font-style: inherit;
+  width: 300px;
+  color: orange;
+  background: black;
+  height: 30px;
+}
 </style>

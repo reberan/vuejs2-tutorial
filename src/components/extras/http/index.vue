@@ -53,14 +53,7 @@ export default {
       this.resource = this.$resource("{node}.json", {}, customActions);
     },
     submit() {
-      this.$http.post(`${this.node}.json`, this.user).then(
-        response => {
-          console.log("TCL: submit -> response", response);
-        },
-        error => {
-          console.log("TCL: submit -> error", error);
-        }
-      );
+      this.$http.post(`${this.node}.json`, this.user);
       // Alternative using this.resource
       // this.resource.saveAlt(this.user);
     },
@@ -72,10 +65,7 @@ export default {
         })
         .then(data => {
           this.users = data;
-        }),
-        error => {
-          console.log("TCL: fetchData -> error", error);
-        };
+        });
 
       // Alternative using this.resource
       /*
