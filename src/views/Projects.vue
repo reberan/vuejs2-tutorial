@@ -3,10 +3,9 @@
     <h1>Projects</h1>
     <div id="nav">
       <router-link to="/project/monsterslayer">The Monster Slayer</router-link>
-      |
-      <router-link to="/project/quotes">Quotes</router-link>
-      |
-      <router-link to="/project/superquiz">Super Quiz</router-link>
+      | <router-link to="/project/quotes">Quotes</router-link> |
+      <router-link to="/project/superquiz">Super Quiz</router-link> |
+      <router-link to="/project/stocktrader">The Stock Trader</router-link>
     </div>
     <div class="projects">
       <router-view />
@@ -14,16 +13,7 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-
-export default {
-  name: "projects"
-};
-</script>
-
 <style scoped lang="stylus">
-.exercises
+.projects
   font-family 'Courier New', Courier, monospace
-  text-align left
 </style>

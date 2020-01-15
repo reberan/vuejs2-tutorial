@@ -13,14 +13,6 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-
-export default {
-  name: "extras"
-};
-</script>
-
 <style scoped lang="stylus">
 .extras
   font-family 'Courier New', Courier, monospace

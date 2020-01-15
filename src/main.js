@@ -21,6 +21,7 @@ Vue.http.interceptors.push((request, next) => {
 });
 */
 Vue.filter("addLength", value => `${value} (${value.length})`);
+Vue.filter("asCurrency", value => `${value} CHF`);
 Vue.mixin(mixin);
 
 export const eventBus = new Vue();

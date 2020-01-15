@@ -16,6 +16,10 @@ import Projects from "../views/Projects.vue";
 import TheMonsterSlayer from "../components/projects/monsterslayer";
 import Quotes from "../components/projects/quotes";
 import Superquiz from "../components/projects/superquiz";
+import StockTrader from "../components/projects/stocktrader";
+import StockTraderHome from "../components/projects/stocktrader/components/Home.vue";
+import StockTraderPortfolio from "../components/projects/stocktrader/components/portfolio/Portfolio.vue";
+import StockTraderStocks from "../components/projects/stocktrader/components/stocks/Stocks.vue";
 import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
 import Http from "../components/extras/http";
@@ -115,7 +119,6 @@ const routes = [
                 path: "/extras/routing/user/:id",
                 component: UserDetail,
                 beforeEnter: (to, from, next) => {
-                  console.log("inside route setup user/:id");
                   next();
                 }
               },
@@ -149,6 +152,22 @@ const routes = [
       {
         path: "/project/superquiz",
         component: Superquiz
+      },
+      {
+        path: "/project/stocktrader",
+        component: StockTrader,
+        redirect: "/project/stocktrader/home",
+        children: [
+          { path: "home", component: StockTraderHome },
+          {
+            path: "portfolio",
+            component: StockTraderPortfolio
+          },
+          {
+            path: "stocks",
+            component: StockTraderStocks
+          }
+        ]
       }
     ]
   },
@@ -176,7 +195,6 @@ const routes = [
         path: "/exercise/5",
         component: Exercise5
       },
-
       {
         path: "/exercise/6",
         component: Exercise6

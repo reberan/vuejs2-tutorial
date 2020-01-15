@@ -20,14 +20,6 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-
-export default {
-  name: "exercises"
-};
-</script>
-
 <style scoped lang="stylus">
 .exercises
   font-family 'Courier New', Courier, monospace
