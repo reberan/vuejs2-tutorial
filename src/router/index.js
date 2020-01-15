@@ -231,10 +231,9 @@ const router = new VueRouter({
   }
 });
 
+// this happens before every transition
 router.beforeEach((to, from, next) => {
-  console.log("TCL: router.beforeEach");
   next();
-  // next(false); // to abort navigation
 });
 
 export default router;
