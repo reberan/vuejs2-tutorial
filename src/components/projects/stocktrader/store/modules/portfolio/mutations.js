@@ -17,10 +17,6 @@ export default {
       if (record.quantity === 0) {
         state.stocks = state.stocks.filter(stock => stock.id !== record.id);
       }
-    } else {
-      console.err(
-        "Cannot sell stock: either quantify is low or stock is missing"
-      );
     }
     state.funds += quantity * stockPrice;
   },
