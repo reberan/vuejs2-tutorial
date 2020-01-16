@@ -58,7 +58,7 @@ export default {
       );
     },
     isAffordable() {
-      return this.funds > this.selectedQuantity * this.stock.price;
+      return this.funds >= this.selectedQuantity * this.stock.price;
     }
   },
   methods: {
