@@ -15,6 +15,11 @@ jobs:
           yarn
           yarn build
 
+      - name: Test
+        run: |
+          yarn
+          yarn test:unit
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
