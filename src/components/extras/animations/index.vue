@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        <br /><br />
+        <h1>Animations</h1>
         <select v-model="alertAnimation" class="form-control">
           <option value="slide">Slide</option>
           <option value="fade">Fade</option>

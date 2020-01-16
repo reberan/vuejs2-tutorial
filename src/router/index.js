@@ -24,10 +24,16 @@ import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
 import Http from "../components/extras/http";
 import Router from "../components/extras/routes";
-import Vuex from "../components/extras/vuex";
-
 import RoutingHeader from "../components/extras/routes/components/Header.vue";
 import RoutingHome from "../components/extras/routes/components/Home.vue";
+import Vuex from "../components/extras/vuex";
+import Axios from "../components/extras/axios";
+import WelcomePage from "../components/extras/axios/components/welcome/welcome.vue";
+import DashboardPage from "../components/extras/axios/components/dashboard/dashboard.vue";
+import SignupPage from "../components/extras/axios/components/auth/signup.vue";
+import SigninPage from "../components/extras/axios/components/auth/signin.vue";
+
+Vue.use(VueRouter);
 
 const User = resolve => {
   require.ensure(
@@ -86,13 +92,14 @@ const routes = [
   {
     path: "/extras",
     component: Extras,
+    redirect: "/extras/animations",
     children: [
       {
-        path: "/extras/animations",
+        path: "animations",
         component: Animations
       },
       {
-        path: "/extras/http",
+        path: "http",
         component: Http
       },
       {
@@ -100,7 +107,7 @@ const routes = [
         component: Router,
         children: [
           {
-            path: "/extras/routing/home",
+            path: "home",
             component: RoutingHome,
             name: "routingHome"
           },
@@ -132,14 +139,26 @@ const routes = [
         ]
       },
       {
-        path: "/extras/vuex",
+        path: "vuex",
         component: Vuex
+      },
+      {
+        path: "axios",
+        redirect: "/extras/axios/welcome",
+        component: Axios,
+        children: [
+          { path: "welcome", component: WelcomePage },
+          { path: "signup", component: SignupPage },
+          { path: "signin", component: SigninPage },
+          { path: "dashboard", component: DashboardPage }
+        ]
       }
     ]
   },
   {
     path: "/projects",
     component: Projects,
+    redirect: "/project/monsterslayer",
     children: [
       {
         path: "/project/monsterslayer",
@@ -174,6 +193,7 @@ const routes = [
   {
     path: "/exercises",
     component: Exercises,
+    redirect: "/exercise/1",
     children: [
       {
         path: "/exercise/1",
