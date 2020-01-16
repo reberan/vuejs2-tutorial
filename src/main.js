@@ -25,8 +25,8 @@ Vue.http.options.root = "https://vuejs2-tutorial-1a9a6.firebaseio.com";
 // With Axios
 // @link https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index
 // @link https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
-axios.defaults.baseURL = "https://vuejs2-tutorial-axios.firebaseio.com";
-axios.defaults.headers.common["Autjhorization"] = "something";
+axios.defaults.baseURL = "https://vuejs2-tutorial-1a9a6.firebaseio.com/";
+// axios.defaults.headers.common["Autjhorization"] = "something";
 axios.defaults.headers.get["Accepts"] = "application/json";
 
 // Creating axios interceptors

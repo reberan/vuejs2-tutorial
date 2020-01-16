@@ -1,23 +1,41 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">Vue - Complete Guide</router-link>
+      <router-link to="welcome">Vue - Complete Guide</router-link>
     </div>
     <nav>
       <ul>
-        <li>
+        <li v-if="!auth">
           <router-link to="signup">Sign Up</router-link>
         </li>
-        <li>
+        <li v-if="!auth">
           <router-link to="signin">Sign In</router-link>
         </li>
-        <li>
+        <li v-if="auth">
           <router-link to="dashboard">Dashboard</router-link>
+        </li>
+        <li v-if="auth">
+          <button class="btn btn-sm" @click="logout">Logout</button>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    auth() {
+      return this.$store.getters["auth/isAuthenticated"];
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("auth/logout");
+    }
+  }
+};
+</script>
 
 <style scoped>
 #header {

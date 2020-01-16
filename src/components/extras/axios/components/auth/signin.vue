@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import auth from "../../axios-auth";
-
 export default {
   data() {
     return {
@@ -30,9 +28,11 @@ export default {
   },
   methods: {
     onSubmit() {
-      const { email, password } = this;
-      const formData = { email, password };
-      auth.post("users.json", formData);
+      const payload = {
+        email: this.email,
+        password: this.password
+      };
+      this.$store.dispatch("auth/signin", payload);
     }
   }
 };

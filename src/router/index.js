@@ -33,6 +33,8 @@ import DashboardPage from "../components/extras/axios/components/dashboard/dashb
 import SignupPage from "../components/extras/axios/components/auth/signup.vue";
 import SigninPage from "../components/extras/axios/components/auth/signin.vue";
 
+import store from "../store";
+
 Vue.use(VueRouter);
 
 const User = resolve => {
@@ -150,7 +152,13 @@ const routes = [
           { path: "welcome", component: WelcomePage },
           { path: "signup", component: SignupPage },
           { path: "signin", component: SigninPage },
-          { path: "dashboard", component: DashboardPage }
+          {
+            path: "dashboard",
+            component: DashboardPage,
+            beforeEnter(to, from, next) {
+              store.getters["auth/isAuthenticated"] ? next() : next(false);
+            }
+          }
         ]
       }
     ]
