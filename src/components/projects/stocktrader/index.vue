@@ -19,8 +19,7 @@ export default {
     appHeader: Header
   },
   created() {
-    Vue.http.options.root =
-      "https://vuejs2-tutorial-stocktrader.firebaseio.com/";
+    Vue.http.options.root = "https://vuejs2-tutorial-1a9a6.firebaseio.com/";
   }
 };
 </script>
@@ -29,12 +28,15 @@ export default {
 .fade-enter {
   opacity: 0;
 }
+
 .fade-enter-active {
   transition: opacity 0.3s;
 }
+
 .fade-leave {
   /* opacity 1 */
 }
+
 .fade-leave-active {
   transition: opacity 0.3s;
 }

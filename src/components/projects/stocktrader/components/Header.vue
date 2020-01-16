@@ -73,13 +73,13 @@ export default {
         stockPortfolio: this.stockPortfolio,
         stocks: this.stocks
       };
-      this.$http.put("data.json", data).then(response => {
+      this.$http.put("stocktrader.json", data).then(response => {
         return response.json();
       });
     },
     loadData() {
       this.$http
-        .get("data.json")
+        .get("stocktrader.json")
         .then(response => {
           return response.json();
         })
