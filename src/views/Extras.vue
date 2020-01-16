@@ -6,7 +6,7 @@
       <router-link to="/extras/http">HTTP</router-link> |
       <router-link to="/extras/routing">Routing</router-link> |
       <router-link to="/extras/vuex">Vuex</router-link> |
-      <router-link to="/extras/axios">Axios</router-link>
+      <router-link to="/extras/axios">Axios & Auth</router-link>
     </div>
     <div class="extras">
       <router-view />
