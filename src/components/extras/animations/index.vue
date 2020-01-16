@@ -80,7 +80,7 @@
             <li
               class="list-group-item"
               v-for="(n, index) in numbers"
-              :key="n"
+              :key="index"
               style="cursor: pointer"
               @click="removeItem(index)"
             >
