@@ -41,7 +41,7 @@ export default {
       },
       users: null,
       resource: {},
-      node: "data"
+      node: "extra-http"
     };
   },
   methods: {
