@@ -1,4 +1,5 @@
 import Vue from "vue";
+import Vuelidate from "vuelidate";
 import VueResource from "vue-resource";
 import axios from "axios";
 import App from "./App.vue";
@@ -7,6 +8,8 @@ import store from "./store";
 import mixin from "./components/exercises/exercise11/mixin";
 
 Vue.config.productionTip = false;
+
+Vue.use(Vuelidate);
 
 // With VueResource
 Vue.use(VueResource);
