@@ -15,7 +15,7 @@ const persistUserData = userData => {
 
 export default {
   tryAutoLogin({ commit }) {
-    const userData = JSON.parse(localStorage.getItem("userData") || {});
+    const userData = JSON.parse(localStorage.getItem("userData"));
     const { idToken, expirationDate, localId, email } = userData;
     if (!idToken || new Date() <= expirationDate) {
       return;
