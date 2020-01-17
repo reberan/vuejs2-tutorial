@@ -1,7 +1,7 @@
 export default {
   AUTH: (state, payload) => {
     state.idToken = payload.idToken;
-    state.userId = payload.localId;
+    state.userId = payload.localId || payload.userId;
     state.email = payload.email;
   },
 
