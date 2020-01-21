@@ -13,7 +13,7 @@ Vue.use(Vuelidate);
 
 // With VueResource
 Vue.use(VueResource);
-Vue.http.options.root = "https://vuejs2-tutorial-1a9a6.firebaseio.com";
+Vue.http.options.root = process.env.VUE_APP_FIREBASE_BASE_URL_TUTORIAL;
 
 // Global Interceptors
 // Vue.http.interceptors.push((request, next) => {
@@ -28,7 +28,7 @@ Vue.http.options.root = "https://vuejs2-tutorial-1a9a6.firebaseio.com";
 // With Axios
 // @link https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index
 // @link https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
-axios.defaults.baseURL = "https://vuejs2-tutorial-1a9a6.firebaseio.com/";
+axios.defaults.baseURL = process.env.VUE_APP_FIREBASE_BASE_URL_TUTORIAL;
 // axios.defaults.headers.common["Autjhorization"] = "something";
 axios.defaults.headers.get["Accepts"] = "application/json";
 

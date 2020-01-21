@@ -136,7 +136,7 @@ import {
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://vuejs2-tutorial-auth.firebaseio.com"
+  baseURL: process.env.VUE_APP_FIREBASE_BASE_URL_TUTORIAL
 });
 
 export default {

@@ -19,7 +19,7 @@ export default {
     appHeader: Header
   },
   created() {
-    Vue.http.options.root = "https://vuejs2-tutorial-1a9a6.firebaseio.com/";
+    Vue.http.options.root = process.env.VUE_APP_FIREBASE_BASE_URL_TUTORIAL;
   }
 };
 </script>
