@@ -1,7 +1,7 @@
 <template>
   <div id="dashboard">
     <h1>That's the dashboard!</h1>
-    <p>Your mail address is {{ user.email }}</p>
+    <p v-if="user !== null">Your mail address is {{ user.email }}</p>
   </div>
 </template>
 
