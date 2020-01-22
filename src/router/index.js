@@ -37,48 +37,61 @@ import store from "../store";
 
 Vue.use(VueRouter);
 
-const User = resolve => {
-  require.ensure(
-    ["../components/extras/routes/components/user/User.vue"],
-    () => {
-      resolve(require("../components/extras/routes/components/user/User.vue"));
-    },
-    "user"
-  );
-};
-const UserStart = resolve => {
-  require.ensure(
-    ["../components/extras/routes/components/user/UserStart.vue"],
-    () => {
-      resolve(
-        require("../components/extras/routes/components/user/UserStart.vue")
-      );
-    },
-    "user"
-  );
-};
-const UserEdit = resolve => {
-  require.ensure(
-    ["../components/extras/routes/components/user/UserEdit.vue"],
-    () => {
-      resolve(
-        require("../components/extras/routes/components/user/UserEdit.vue")
-      );
-    },
-    "user"
-  );
-};
-const UserDetail = resolve => {
-  require.ensure(
-    ["../components/extras/routes/components/user/UserDetail.vue"],
-    () => {
-      resolve(
-        require("../components/extras/routes/components/user/UserDetail.vue")
-      );
-    },
-    "user"
-  );
-};
+// const User = resolve => {
+//   require.ensure(
+//     ["../components/extras/routes/components/user/User.vue"],
+//     () => {
+//       resolve(require("../components/extras/routes/components/user/User.vue"));
+//     },
+//     "user"
+//   );
+// };
+
+// const UserStart = resolve => {
+//   require.ensure(
+//     ["../components/extras/routes/components/user/UserStart.vue"],
+//     () => {
+//       resolve(
+//         require("../components/extras/routes/components/user/UserStart.vue")
+//       );
+//     },
+//     "user"
+//   );
+// };
+
+// const UserEdit = resolve => {
+//   require.ensure(
+//     ["../components/extras/routes/components/user/UserEdit.vue"],
+//     () => {
+//       resolve(
+//         require("../components/extras/routes/components/user/UserEdit.vue")
+//       );
+//     },
+//     "user"
+//   );
+// };
+
+// const UserDetail = resolve => {
+//   require.ensure(
+//     ["../components/extras/routes/components/user/UserDetail.vue"],
+//     () => {
+//       resolve(
+//         require("../components/extras/routes/components/user/UserDetail.vue")
+//       );
+//     },
+//     "user"
+//   );
+// };
+
+// Alternative Lazy Loading Syntax (for pörojects created with CLI 3+)
+const User = () =>
+  import("../components/extras/routes/components/user/User.vue");
+const UserStart = () =>
+  import("../components/extras/routes/components/user/UserStart.vue");
+const UserEdit = () =>
+  import("../components/extras/routes/components/user/UserEdit.vue");
+const UserDetail = () =>
+  import("../components/extras/routes/components/user/UserDetail.vue");
 
 Vue.use(VueRouter);
 
