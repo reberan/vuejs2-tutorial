@@ -79,12 +79,12 @@
           <transition-group name="slide" mode="in-out">
             <li
               class="list-group-item"
-              v-for="(n, index) in numbers"
-              :key="index"
+              v-for="(number, index) in numbers"
+              :key="number"
               style="cursor: pointer"
               @click="removeItem(index)"
             >
-              {{ n }}
+              {{ number }}
             </li>
           </transition-group>
         </ul>
