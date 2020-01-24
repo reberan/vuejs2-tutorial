@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Exercises from "../views/Exercises.vue";
-import Exercise1 from "../components/exercises/Exercise1.vue";
-import Exercise2 from "../components/exercises/Exercise2.vue";
-import Exercise3 from "../components/exercises/Exercise3.vue";
-import Exercise4 from "../components/exercises/Exercise4.vue";
-import Exercise5 from "../components/exercises/Exercise5.vue";
+import Exercise1 from "../components/exercises/exercise1";
+import Exercise2 from "../components/exercises/exercise2";
+import Exercise3 from "../components/exercises/exercise3";
+import Exercise4 from "../components/exercises/exercise4";
+import Exercise5 from "../components/exercises/exercise5";
 import Exercise6 from "../components/exercises/exercise6";
 import Exercise7 from "../components/exercises/exercise7";
 import Exercise8 from "../components/exercises/exercise8";
@@ -23,7 +23,7 @@ import StockTraderStocks from "../components/projects/stocktrader/components/sto
 import Extras from "../views/Extras.vue";
 import Animations from "../components/extras/animations";
 import Http from "../components/extras/http";
-import Router from "../components/extras/routes";
+import Routes from "../components/extras/routes";
 import RoutingHeader from "../components/extras/routes/components/Header.vue";
 import RoutingHome from "../components/extras/routes/components/Home.vue";
 import Vuex from "../components/extras/vuex";
@@ -99,33 +99,21 @@ const routes = [
   {
     path: "/",
     name: "home",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/Home.vue")
+    component: () => import("../views/Home.vue")
   },
   {
     path: "/extras",
     component: Extras,
     redirect: "/extras/animations",
     children: [
-      {
-        path: "animations",
-        component: Animations
-      },
-      {
-        path: "http",
-        component: Http
-      },
+      { path: "animations", component: Animations },
+      { path: "http", component: Http },
+      { path: "vuex", component: Vuex },
       {
         path: "routing",
-        component: Router,
+        component: Routes,
         children: [
-          {
-            path: "home",
-            component: RoutingHome,
-            name: "routingHome"
-          },
+          { path: "home", component: RoutingHome, name: "routingHome" },
           {
             path: "user",
             components: {
@@ -133,10 +121,7 @@ const routes = [
               "header-bottom": RoutingHeader
             },
             children: [
-              {
-                path: "",
-                component: UserStart
-              },
+              { path: "", component: UserStart },
               {
                 path: "/extras/routing/user/:id",
                 component: UserDetail,
@@ -152,10 +137,6 @@ const routes = [
             ]
           }
         ]
-      },
-      {
-        path: "vuex",
-        component: Vuex
       },
       {
         path: "axios",
@@ -181,32 +162,17 @@ const routes = [
     component: Projects,
     redirect: "/project/monsterslayer",
     children: [
-      {
-        path: "/project/monsterslayer",
-        component: TheMonsterSlayer
-      },
-      {
-        path: "/project/quotes",
-        component: Quotes
-      },
-      {
-        path: "/project/superquiz",
-        component: Superquiz
-      },
+      { path: "/project/monsterslayer", component: TheMonsterSlayer },
+      { path: "/project/quotes", component: Quotes },
+      { path: "/project/superquiz", component: Superquiz },
       {
         path: "/project/stocktrader",
         component: StockTrader,
         redirect: "/project/stocktrader/home",
         children: [
           { path: "home", component: StockTraderHome },
-          {
-            path: "portfolio",
-            component: StockTraderPortfolio
-          },
-          {
-            path: "stocks",
-            component: StockTraderStocks
-          }
+          { path: "portfolio", component: StockTraderPortfolio },
+          { path: "stocks", component: StockTraderStocks }
         ]
       }
     ]
@@ -216,45 +182,22 @@ const routes = [
     component: Exercises,
     redirect: "/exercise/1",
     children: [
-      {
-        path: "/exercise/1",
-        component: Exercise1
-      },
-      {
-        path: "/exercise/2",
-        component: Exercise2
-      },
-      {
-        path: "/exercise/3",
-        component: Exercise3
-      },
-      {
-        path: "/exercise/4",
-        component: Exercise4
-      },
-      {
-        path: "/exercise/5",
-        component: Exercise5
-      },
-      {
-        path: "/exercise/6",
-        component: Exercise6
-      },
-      {
-        path: "/exercise/7",
-        component: Exercise7
-      },
-      {
-        path: "/exercise/8",
-        component: Exercise8
-      },
+      { path: "/exercise/1", component: Exercise1 },
+      { path: "/exercise/2", component: Exercise2 },
+      { path: "/exercise/3", component: Exercise3 },
+      { path: "/exercise/4", component: Exercise4 },
+      { path: "/exercise/5", component: Exercise5 },
+      { path: "/exercise/6", component: Exercise6 },
+      { path: "/exercise/7", component: Exercise7 },
+      { path: "/exercise/8", component: Exercise8 },
       { path: "/exercise/9", component: Exercise9 },
       { path: "/exercise/10", component: Exercise10 },
-      { path: "/exercise/11", component: Exercise11 },
-      // In case nothing matches, go back to the root initial page
-      { path: "*", redirect: "/" }
+      { path: "/exercise/11", component: Exercise11 }
     ]
-  }
+  },
+
+  // In case nothing matches, go back to the root initial page
+  { path: "*", redirect: "/" }
 ];
 
 const router = new VueRouter({
