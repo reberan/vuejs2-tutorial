@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row text-center">
     <h3>Response</h3>
     <p v-if="isCorrect">Congrats your answer is correct</p>
     <p v-else>

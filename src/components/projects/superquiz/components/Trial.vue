@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row text-center">
     <h3>Question {{ index }}</h3>
     <p>{{ trial.question }}</p>
     <ul class="list-group">

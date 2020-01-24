@@ -9,7 +9,7 @@
         <router-link to="/project/stocktrader">The Stock Trader</router-link>
       </div>
     </div>
-    <div class="row">
+    <div class="row text-left">
       <router-view />
     </div>
   </div>
