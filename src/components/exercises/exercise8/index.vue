@@ -3,13 +3,14 @@
     <h1>Exercise 8</h1>
     <div class="row">
       <div class="col-xs-12">
-        <br />
         <button class="btn btn-primary" @click="selectedComponent = 'appBlue'">
           Load Blue Template
         </button>
+        &nbsp;
         <button class="btn btn-success" @click="selectedComponent = 'appGreen'">
           Load Green Template
         </button>
+        &nbsp;
         <button class="btn btn-danger" @click="selectedComponent = 'appRed'">
           Load Red Template
         </button>

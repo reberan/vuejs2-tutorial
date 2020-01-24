@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <h1>Exercise 7</h1>
-    <app-header></app-header>
-    <hr />
+    <div class="row">
+      <div class="col-xs-12">
+        <app-header></app-header>
+      </div>
+    </div>
     <div class="row">
       <servers></servers>
       <app-server-details></app-server-details>
@@ -27,5 +29,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

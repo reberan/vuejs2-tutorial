@@ -11,7 +11,7 @@
 import ServerItem from "./ServerItem.vue";
 export default {
   components: { ServerItem },
-  data: function() {
+  data() {
     return {
       servers: [
         { id: 1, status: "Normal" },

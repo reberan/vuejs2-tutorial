@@ -2,12 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <header>
-        <h1>Server Status</h1>
+        <h1>Exercise 7 (Server Status #2)</h1>
       </header>
     </div>
   </div>
 </template>
-
-<script></script>
-
-<style></style>
