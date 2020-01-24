@@ -1,6 +1,6 @@
 {
   "name": "vuejs-2-tutorial",
-  "description": "Vue.js is an awesome JavaScript Framework for building Frontend Applications! VueJS mixes the Best of Angular + React!",
+  "description": "Vue.js i2 udemy course",
   "version": "0.1.0",
   "private": true,
   "repository": {
@@ -8,11 +8,11 @@
     "url": "https://github.com/reberan/vuejs2-tutorial.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
+    "dev": "vue-cli-service build --mode development",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "build:development": "vue-cli-service build --mode development"
   },
   "dependencies": {
     "axios": "^0.19.1",

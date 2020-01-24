@@ -8,19 +8,25 @@ This projects contains the code implementing every exercise and project that hav
 ## Project setup
 
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-yarn serve
+yarn start
 ```
 
 ### Compiles and minifies for production
 
 ```
 yarn build
+```
+
+### Compiles and minifies for development
+
+```
+yarn dev
 ```
 
 ### Run your unit tests
