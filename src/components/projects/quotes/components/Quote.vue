@@ -15,10 +15,13 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.panel-body
-    font-family 'Arizona', cursive
-    font-size 24px
-    color #6e6e6e
-    &:hover
-        background #ffe2e2
+.panel-body {
+  font-family: 'Arizona', cursive;
+  font-size: 24px;
+  color: #6e6e6e;
+
+  &:hover {
+    background: #ffe2e2;
+  }
+}
 </style>

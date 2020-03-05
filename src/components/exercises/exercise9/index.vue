@@ -119,6 +119,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.solution
-  color green
+.solution {
+  color: green;
+}
 </style>

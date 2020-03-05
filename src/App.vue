@@ -15,9 +15,10 @@
 </template>
 
 <style lang="stylus">
-#app
-  font-family "Courier New", Courier, monospace
-  font-size 14px
-  color #00000A
-  margin-top 60px
+#app {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #00000A;
+  margin-top: 60px;
+}
 </style>

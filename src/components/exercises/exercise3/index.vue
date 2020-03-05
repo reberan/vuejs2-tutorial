@@ -50,8 +50,11 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.task
-  color blue
-.solution
-  color green
+.task {
+  color: blue;
+}
+
+.solution {
+  color: green;
+}
 </style>
