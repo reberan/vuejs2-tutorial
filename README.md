@@ -1,3 +1,5 @@
+![Deploy to GitHub Pages](https://github.com/reberan/vuejs2-tutorial/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+
 # vuejs2-tutorial
 
 ## Description
